@@ -7,7 +7,7 @@ class Horarios(models.Model):
     horarioDeFechamento = models.TimeField()
 
     def __str__(self):
-        return f"Horario de Abertura {self.horarioDeAbertura} {self.horarioDeFechamento}"
+        return f"Horario de Abertura: {self.horarioDeAbertura}  Horario de Fechamento: {self.horarioDeFechamento}"
 
 class Usuarios(models.Model):
     nome = models.CharField(max_length=100)
@@ -27,6 +27,7 @@ class Restaurantes(models.Model):
 
     def __str__(self):
         return f"Restaurante {self.nome} {self.endereco} {self.capacidadeDeMesas}"
+    #se mudar essa linha aqui, lá no adm a diva muda essa palavra
     
 class Mesa(models.Model):
     restaurante = models.ForeignKey(Restaurantes, on_delete=models.CASCADE)
@@ -34,7 +35,7 @@ class Mesa(models.Model):
     capacidadeDaMesa = models.PositiveIntegerField(null=True)
 
     def __str__(self):
-        return f"Mesa {self.numeroDaMesa} {self.capacidadeDaMesa}"
+        return f"Mesa Nº: {self.numeroDaMesa} Capacidade: {self.capacidadeDaMesa}"
 
 class Reserva(models.Model):
     mesa = models.ForeignKey(Mesa, on_delete=models.CASCADE, null=True)
