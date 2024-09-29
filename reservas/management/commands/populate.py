@@ -21,7 +21,7 @@ def criar_restaurantes(n):
         Restaurantes.objects.create(
             nome=fake.company(),
             endereco=fake.address(),
-            capacidadeDeMesas=random.randint(10, 50)  # Entre 10 e 50 mesas
+            capacidadeDeMesas=random.randint(8, 30)  # Entre 10 e 50 mesas
         )
 
 def criar_mesas(n):
@@ -31,7 +31,7 @@ def criar_mesas(n):
             Mesa.objects.create(
                 restaurante=restaurante,
                 numeroDaMesa=str(random.randint(1, 100)),
-                capacidadeDaMesa=random.randint(2, 10)  # Mesas para 2 a 10 pessoas
+                capacidadeDaMesa=random.randint(2, 8)  # Mesas para 2 a 10 pessoas
             )
 
 def criar_reservas(n):
